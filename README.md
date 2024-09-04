@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Four Kitchens Next.js Starter Kit
+
+## Requirements
+
+1. Node.js 22
+2. A compatible Drupal BE site (see requirements below)
 
 ## Getting Started
 
-First, run the development server:
+1. Start creating a new Next.js Project using the Starter Kit:
+
+   ```bash
+   npx create-next-app@latest --example "https://github.com/fourkitchens/4k-nextjs-starter"
+   ```
+
+2. After the project is created, `cd` into the project folder and create a copy of
+   `.env.local.example`. Rename it to `.env.local`, edit it and set the right values to match your Drupal
+   Backend configuration.
+
+3. Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open your browser and visit the dev site at http://localhost:3000/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Drupal Requirements
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This starter kit is designed to work along a Drupal backend site configured with the following features:
 
-## Learn More
+- A [GraphQL](https://www.drupal.org/project/graphql) endpoint
+- [GraphQL Compose](https://www.drupal.org/project/graphql_compose) configured to expose the content types and other entities that will be accessed by the Next.js site.
+- An [OAuth](https://www.drupal.org/project/simple_oauth) consumer configured with a scope role and a default user with permissions to execute GraphQL queries.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can use [Sous](https://github.com/fourkitchens/sous-drupal-project) and the
+[Sous GraphQL recipe](https://github.com/fourkitchens/sous-graphql) to setup your Drupal BE site.
