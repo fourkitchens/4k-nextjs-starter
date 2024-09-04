@@ -6,19 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gql:sync": "npx tsx scripts/sync.ts"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "drupal-auth-client": "^0.4.0",
+    "graphql-request": "^7.1.0",
+    "next": "14.2.6",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.6"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.6"
+    "eslint-config-next": "14.2.6",
+    "gql.tada": "^1.8.6",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5"
   }
 }
