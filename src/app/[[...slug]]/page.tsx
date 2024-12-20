@@ -4,15 +4,16 @@ import { ROUTE_QUERY } from '@/graphql/queries/route-query';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 };
 
 // Invalidate the cache every minute.
 export const revalidate = 60;
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const { slug } = params;
 
   const response = await query(ROUTE_QUERY, {
